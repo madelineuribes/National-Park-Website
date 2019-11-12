@@ -31,6 +31,7 @@ public class JdbcParkDao implements ParkDao{
 
 	private Park mapRowToPark(SqlRowSet results) {
 		Park park = new Park();
+		park.setParkCode(results.getLong("parkcode"));  
 		park.setName(results.getString("parkname"));
 		park.setState(results.getString("state"));
 		park.setAcreage(results.getInt("acreage"));

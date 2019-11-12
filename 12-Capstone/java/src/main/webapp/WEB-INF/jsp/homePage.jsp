@@ -4,9 +4,16 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<body>
+<section class="park container">
+
 	<c:forEach var="park" items="${allParks}">
-		<c:out value= "${park.name}"/>
+		<div class="park-info">
+		<h2> 
+			<c:out value="${park.name}" />
+			</h2>
+		</div> 
 	</c:forEach>
+</section>
+
 </body>
 </html>

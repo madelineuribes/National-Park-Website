@@ -22,7 +22,7 @@
 		</a>
 
 		<nav>
-			<ul>
+			<ul> 
 				<li><c:url value="/" var="homeHref" /><a
 					href="${homeHref}">Home</a></li>
 			</ul>
@@ -40,5 +40,3 @@
 		</nav>
 	</header>
 
-</body>
-</html>
