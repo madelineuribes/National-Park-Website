@@ -1,4 +1,4 @@
-package com.techelevator.npgeek.Model;
+package com.techelevator.npgeek.Model.Park;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.techelevator.npgeek.Model;
+package com.techelevator.npgeek.Model.Park;
 
 public class Park {
 	

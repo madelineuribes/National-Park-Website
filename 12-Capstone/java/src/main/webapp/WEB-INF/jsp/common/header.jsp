@@ -7,9 +7,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>National Park Weather Service</title>
-
 <c:url value="/css/style.css" var="cssHref" />
 <link rel="stylesheet" href="${cssHref}">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
 
@@ -21,22 +21,23 @@
 			alt="National Park Weather logo" />
 		</a>
 
-		<nav>
-			<ul> 
-				<li><c:url value="/" var="homeHref" /><a
-					href="${homeHref}">Home</a></li>
-			</ul>
-			
-			<ul>
-				<li><c:url value="/survey" var="surveyHref" /><a
-					href="${surveyHref}">Survey</a></li>
-			</ul>
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><c:url value="/" var="homeHref" /><a href="${homeHref}">Home</a></li>
+                    <li><c:url value="/survey" var="surveyHref" /><a href="${surveyHref}">Survey</a></li>
+					<li><c:url value="/favoriteParks" var="favoriteParksHref" /><a href="${favoriteParksHref}">Favorite Parks</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-			<ul>
-				<li><c:url value="/favoriteParks" var="favoriteParksHref" /><a
-					href="${favoriteParksHref}">Favorite Parks</a></li>
-			</ul>
-
-		</nav>
 	</header>
-
