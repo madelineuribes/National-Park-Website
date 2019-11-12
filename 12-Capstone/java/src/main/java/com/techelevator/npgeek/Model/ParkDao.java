@@ -7,6 +7,7 @@ public interface ParkDao {
 
 	public List<Park> getAllParks();
 	
-	public Park getParkById(Long parkId);
+	public Park getParkById(String parkId);
 	
 }
+ 

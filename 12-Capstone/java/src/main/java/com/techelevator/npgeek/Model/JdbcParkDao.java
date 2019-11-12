@@ -8,8 +8,9 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
-
-public class JdbcParkDao implements ParkDao{
+import org.springframework.stereotype.Component;
+@Component
+public class JdbcParkDao implements ParkDao{ 
 	
 	private JdbcTemplate jdbcTemplate;
 	
@@ -27,15 +28,15 @@ public class JdbcParkDao implements ParkDao{
 			allParks.add(mapRowToPark(results));
 		}
 		return allParks;
-	}
+	}  
 
 	private Park mapRowToPark(SqlRowSet results) {
 		Park park = new Park();
-		park.setParkCode(results.getLong("parkcode"));  
-		park.setName(results.getString("parkname"));
+		park.setParkCode(results.getString("parkcode"));    
+		park.setName(results.getString("parkname")); 
 		park.setState(results.getString("state"));
 		park.setAcreage(results.getInt("acreage"));
-		park.setElevation(results.getInt("elevation"));
+		park.setElevation(results.getInt("elevationinfeet"));
 		park.setMilesOfTrail(results.getDouble("milesoftrail"));
 		park.setNumOfCampsites(results.getInt("numberofcampsites"));
 		park.setClimate(results.getString("climate"));
@@ -46,11 +47,11 @@ public class JdbcParkDao implements ParkDao{
 		park.setParkDescription(results.getString("parkdescription"));
 		park.setEntryFee(results.getInt("entryfee"));
 		park.setNumOfAnimalSpecies(results.getInt("numberofanimalspecies"));
-		return park;
+		return park; 
 	}
-
+ 
 	@Override
-	public Park getParkById(Long parkId) {
+	public Park getParkById(String parkId) {
 		Park park = new Park();
 		String sqlSelectParkById = "SELECT * FROM park WHERE parkcode = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectParkById, parkId);
