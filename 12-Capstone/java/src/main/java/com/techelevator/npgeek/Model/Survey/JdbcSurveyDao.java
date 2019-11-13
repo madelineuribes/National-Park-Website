@@ -5,7 +5,8 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
-
+import org.springframework.stereotype.Component;
+@Component
 public class JdbcSurveyDao implements SurveyDao{
 	
 	private JdbcTemplate jdbcTemplate;
@@ -14,16 +15,16 @@ public class JdbcSurveyDao implements SurveyDao{
 	public JdbcSurveyDao(DataSource dataSource) {
 	    jdbcTemplate = new JdbcTemplate(dataSource);
 	}
-
+ 
 
 	@Override
-	public void save(Survey survey) {
-	    String insertSql = "INSERT INTO survey_result (parkCode, email, state, " +
+	public void save(Survey survey) { 
+	    String insertSql = "INSERT INTO survey_result (parkCode, email, state," +
 	            "activityLevel) VALUES (?, ?, ?, ?)";
 	    jdbcTemplate.update(insertSql, survey.getParkCode(), survey.getEmail(), 
-	            survey.getState(), survey.getActivityLevel());
+	            survey.getState(), survey.getActivityLevel()); 
 	}
-
+ 
 	@Override
 	public Survey getSurvey() {
 

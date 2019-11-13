@@ -4,14 +4,14 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<body>
-	<c:url value="/surveyResult" var="surveyResultUrl" />
-	<form:form modelAttribute="surveyResult" action="${surveyResultUrl}" method="POST">
-
-		<label for="email">Email:</label>
-		<form:input path="email" class="form-control" />
-		<form:errors path="email" cssClass="error" />
-
+<body> 
+	<c:url value="/survey" var="surveyResultUrl" /> 
+	<form:form modelAttribute="survey" action="${surveyResultUrl}" method="POST">
+   
+		<label for="email">Email:</label> 
+		 <form:input path="email" class="form-control" />    
+		<form:errors path="email" cssClass="error" /> 
+ 
 		<label for="state">State:</label>
 		<form:input path="state" class="form-control" />
 		<form:errors path="state" cssClass="error" />
