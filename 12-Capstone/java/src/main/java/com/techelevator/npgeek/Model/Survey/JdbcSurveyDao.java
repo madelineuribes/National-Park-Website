@@ -1,46 +1,61 @@
 package com.techelevator.npgeek.Model.Survey;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
+
 @Component
-public class JdbcSurveyDao implements SurveyDao{
-	
+public class JdbcSurveyDao implements SurveyDao {
+
 	private JdbcTemplate jdbcTemplate;
-	
+
 	@Autowired
 	public JdbcSurveyDao(DataSource dataSource) {
-	    jdbcTemplate = new JdbcTemplate(dataSource);
+		jdbcTemplate = new JdbcTemplate(dataSource);
 	}
- 
 
 	@Override
-	public void save(Survey survey) { 
-	    String insertSql = "INSERT INTO survey_result (parkcode, emailaddress, state, " +
-	            "activitylevel) VALUES (?, ?, ?, ?)";
-	    jdbcTemplate.update(insertSql, survey.getParkCode(), survey.getEmail(), 
-	            survey.getState(), survey.getActivityLevel()); 
+	public void save(Survey survey) {
+		String insertSql = "INSERT INTO survey_result (parkcode, emailaddress, state, "
+				+ "activitylevel) VALUES (?, ?, ?, ?)";
+		jdbcTemplate.update(insertSql, survey.getParkCode(), survey.getEmail(), survey.getState(),
+				survey.getActivityLevel());
 	}
-  
-	@Override 
+
+	@Override
 	public Survey getSurvey() {
 
-	    Survey survey = new Survey();
-	    String selectSql = "SELECT * " + 
-	            "FROM survey_result";
-	    
-	    SqlRowSet results = jdbcTemplate.queryForRowSet(selectSql);
-	    
-	    if (results.next()) {
-	        survey.setParkCode(results.getString("parkcode"));
-	        survey.setEmail(results.getString("emailaddress"));
-	        survey.setState(results.getString("state"));
-	        survey.setActivityLevel(results.getString("activitylevel"));
-	    }
+		Survey survey = new Survey();
+		String selectSql = "SELECT * " + "FROM survey_result";
 
-	    return survey;
+		SqlRowSet results = jdbcTemplate.queryForRowSet(selectSql);
+
+		if (results.next()) {
+			survey.setParkCode(results.getString("parkcode"));
+			survey.setEmail(results.getString("emailaddress"));
+			survey.setState(results.getString("state"));
+			survey.setActivityLevel(results.getString("activitylevel"));
+		}
+
+		return survey;
 	}
+
+//	public int getNumOfSurveysTaken(Survey survey) {
+//
+//		List<Survey> surveyList = new ArrayList<>();
+//		String getSurveyNumber = "SELECT * " + "FROM survey_result WHERE parkcode = ?";
+//		SqlRowSet results = jdbcTemplate.queryForRowSet(getSurveyNumber, survey.getParkCode());
+//
+//		while(results.next()) {
+//			survey.setParkCode(results.getString("parkcode"));
+//			 
+//		}
+//		 
+//	}
 }

@@ -8,7 +8,7 @@
 <body>
 	<div class="col-md-12 detail-container">
 		<div class="park-detail-img">
-			<img src="img/parks/${parkCode.toLowerCase()}.jpg" />
+			<img src="img/parks/${parkCode.toLowerCase()}.jpg" /> 
 		</div>
 
 		<div class="park-detail-info">
@@ -16,7 +16,20 @@
 				<c:out value="${park.name}" />
 			</h3>
 			<p><c:out value="${park.inspQuote}"/></p>
+			<p>-<c:out value="${park.inspQuoteSource}"/></p> 
+			<br> 
+			<p>Acreage:<c:out value="${park.acreage}"/></p>
+			<p>Elevation:<c:out value="${park.elevation}"/></p>
+			<p>Total Miles on Trail:<c:out value="${park.milesOfTrail}"/></p>
+			<p>Total Number of Camp Sites:<c:out value="${park.numOfCampsites}"/></p>
+			<p>Climate:<c:out value="${park.climate}"/></p>
+			<p>Year Founded:<c:out value="${park.yearFounded}"/></p>
+			<p>Annual Visitors:<c:out value="${park.annualVisitorCount}"/></p>
+			<p>Number of Animal Species: <c:out value="${park.numOfAnimalSpecies}"/></p>
+			<p>Entry Fee:<c:out value="${park.entryFee}"/></p>
+			<br> 
+			<p><c:out value="${park.parkDescription}"/></p>
 		</div>
-	</div>
+	</div>  
 </body>
-</html>
+</html> 

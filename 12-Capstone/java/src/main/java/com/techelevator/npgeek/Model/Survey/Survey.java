@@ -3,7 +3,7 @@ package com.techelevator.npgeek.Model.Survey;
 import org.hibernate.validator.constraints.NotBlank;
 
 public class Survey {
-
+ 
 	
 	private Long id;
 	private String parkCode;
