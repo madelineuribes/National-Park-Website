@@ -6,7 +6,7 @@ public class Weather {
 	private int highTemp;
 	private int lowTemp;
 	private int dayValue;
-	private String Forecast;
+	private String forecast;
 
 	public String getParkCode() { 
 		return parkCode;
@@ -41,10 +41,10 @@ public class Weather {
 	}
 
 	public String getForecast() {
-		return Forecast;
+		return forecast;
 	}
 
 	public void setForecast(String forecast) {
-		Forecast = forecast;
+		this.forecast = forecast;
 	}
 }

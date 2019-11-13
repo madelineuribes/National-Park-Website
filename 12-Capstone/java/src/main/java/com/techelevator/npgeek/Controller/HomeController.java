@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.techelevator.npgeek.Model.Park.Park;
 import com.techelevator.npgeek.Model.Park.ParkDao;
+import com.techelevator.npgeek.Model.Weather.WeatherDao;
 
 @Controller
 public class HomeController {
@@ -18,6 +19,9 @@ public class HomeController {
 	@Autowired
 	private ParkDao parkDao;
 
+	@Autowired
+	private WeatherDao weatherDao;
+	
 	@RequestMapping("/")
 	public String displayHomePage(ModelMap modelMap) {
 		List<Park> park = parkDao.getAllParks();
@@ -27,6 +31,7 @@ public class HomeController {
 
 	@RequestMapping("/parkDetail")
 	public String displayParkDetail(@RequestParam String parkCode, ModelMap models) {
+		models.put("allWeather", weatherDao.getWeatherById(parkCode));
 		models.put("park", parkDao.getParkById(parkCode));
 		return "parkDetail";
 	}
