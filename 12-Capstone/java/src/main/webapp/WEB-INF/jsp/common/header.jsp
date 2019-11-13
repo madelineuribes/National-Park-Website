@@ -20,8 +20,12 @@
 		<a href="${homePageHref}"> <img src="${logoSrc}"
 			alt="National Park Weather logo" />
 		</a>
+		
+		
+		
+		
 
-    <div class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

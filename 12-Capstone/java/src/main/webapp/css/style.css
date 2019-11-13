@@ -8,17 +8,10 @@ header img {
 	width: 35%;
 }
 
-
-.park-container{
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
+.park-img img{
+	max-width: 80%;
 }
 
-.park-img{
-	width: 50%;
-}
-
-.park-info {
-	width: 50%;
+.col-md-12 {
+	margin-bottom: 10px;
 }
