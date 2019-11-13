@@ -11,9 +11,8 @@
 <link rel="stylesheet" href="${cssHref}">
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
+	rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">	
 </head>
 <body>
 
@@ -38,7 +37,6 @@
 					</div>
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li><c:url value="/" var="homeHref" /><a href="${homeHref}">Home</a></li>
 							<li><c:url value="/survey" var="surveyHref" /><a
 								href="${surveyHref}">Survey</a></li>
 							<li><c:url value="/favoriteParks" var="favoriteParksHref" /><a
@@ -67,9 +65,9 @@
 					<h3>
 						<c:out value="${park.name}" />
 					</h3>
-					<p>
+					<h4>
 						<c:out value="${park.state}" />
-					</p>
+					</h4>
 					<p>
 						<c:out value="${park.parkDescription}" />
 					</p>

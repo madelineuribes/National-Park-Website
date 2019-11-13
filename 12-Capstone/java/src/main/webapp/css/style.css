@@ -1,6 +1,10 @@
 body {
-	font-family: Arial;
+	font-family: 'Open Sans', sans-serif;
 	background-color: white;
+}
+
+h2 {
+
 }
 
 .header {
@@ -33,11 +37,6 @@ body {
   	padding-top: 1%;
   	padding-bottom: 1%;
 	max-width: 100%;
-}
-
-.park-info{
-	margin: 0;
-	padding: 0;
 }
 
 .col-md-12 {

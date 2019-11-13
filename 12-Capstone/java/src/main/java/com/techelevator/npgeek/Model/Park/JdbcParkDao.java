@@ -29,6 +29,17 @@ public class JdbcParkDao implements ParkDao{
 		}
 		return allParks;
 	}  
+ 
+	@Override
+	public Park getParkById(String parkId) {
+		Park park = new Park();
+		String sqlSelectParkById = "SELECT * FROM park WHERE parkcode = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectParkById, parkId);
+		if(results.next()) {
+			park = mapRowToPark(results);
+		}
+		return park;
+	}
 
 	private Park mapRowToPark(SqlRowSet results) {
 		Park park = new Park();
@@ -49,16 +60,5 @@ public class JdbcParkDao implements ParkDao{
 		park.setNumOfAnimalSpecies(results.getInt("numberofanimalspecies"));
 		return park; 
 	}
- 
-	@Override
-	public Park getParkById(String parkId) {
-		Park park = new Park();
-		String sqlSelectParkById = "SELECT * FROM park WHERE parkcode = ?";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectParkById, parkId);
-		if(results.next()) {
-			park = mapRowToPark(results);
-		}
-		return park;
-	}
-
+	
 }

@@ -1,6 +1,5 @@
 package com.techelevator.npgeek.Controller;
 
-import java.io.IOException;
 import java.util.List;
 
 
@@ -28,7 +27,6 @@ public class HomeController {
 
 	@RequestMapping("/parkDetail")
 	public String displayParkDetail(@RequestParam String parkCode, ModelMap models) {
-		models.put("parkCode", parkCode);
 		models.put("park", parkDao.getParkById(parkCode));
 		return "parkDetail";
 	}

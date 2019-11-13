@@ -14,6 +14,7 @@
 	rel="stylesheet"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">		
 </head>
 <body>
 
@@ -37,7 +38,6 @@
 					</div>
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li><c:url value="/" var="homeHref" /><a href="${homeHref}">Home</a></li>
 							<li><c:url value="/survey" var="surveyHref" /><a
 								href="${surveyHref}">Survey</a></li>
 							<li><c:url value="/favoriteParks" var="favoriteParksHref" /><a
