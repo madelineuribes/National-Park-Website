@@ -56,6 +56,9 @@ public class SurveyController {
 	@RequestMapping(path = "/surveyResult", method = RequestMethod.GET)
 	public String showSurveyResult(ModelMap map) {
 
+		List<Park> favPark = surveyDao.getNumOfSurveysTaken();
+		map.addAttribute("favParks", favPark);
+		
 		Survey survey = surveyDao.getSurvey();
 		map.addAttribute("survey", survey);
 

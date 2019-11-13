@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
+
+import com.techelevator.npgeek.Model.Survey.Survey;
 @Component
 public class JdbcParkDao implements ParkDao{ 
 	
@@ -40,6 +42,7 @@ public class JdbcParkDao implements ParkDao{
 		}
 		return park; 
 	}
+	
 
 	private Park mapRowToPark(SqlRowSet results) {
 		Park park = new Park();

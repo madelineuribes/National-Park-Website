@@ -10,6 +10,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import com.techelevator.npgeek.Model.Park.Park;
+
 @Component
 public class JdbcSurveyDao implements SurveyDao {
 
@@ -45,17 +47,25 @@ public class JdbcSurveyDao implements SurveyDao {
 
 		return survey;
 	}
+	
+	@Override
+	public List<Park> getNumOfSurveysTaken() {
+		List<Park> parkList = new ArrayList<>();
+		String getSurveyNumberSql = "SELECT survey_result.parkcode, parkname, park.state,\r\n" + 
+				"count(survey_result.parkcode) AS surveycount FROM survey_result \r\n" + 
+				"JOIN park ON park.parkcode = survey_result.parkcode \r\n" + 
+				"GROUP BY survey_result.parkcode, parkname, park.state ORDER BY surveycount DESC, parkname ASC";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(getSurveyNumberSql);
+		
+		while(results.next()) {
+			Park tempPark = new Park();
+			tempPark.setName(results.getString("parkname"));
+			tempPark.setState(results.getString("state"));
+			tempPark.setSurveyCount(results.getInt("surveycount"));
+			parkList.add(tempPark);
+		}
+		
+		return parkList;
+	}
 
-//	public int getNumOfSurveysTaken(Survey survey) {
-//
-//		List<Survey> surveyList = new ArrayList<>();
-//		String getSurveyNumber = "SELECT * " + "FROM survey_result WHERE parkcode = ?";
-//		SqlRowSet results = jdbcTemplate.queryForRowSet(getSurveyNumber, survey.getParkCode());
-//
-//		while(results.next()) {
-//			survey.setParkCode(results.getString("parkcode"));
-//			 
-//		}
-//		 
-//	}
 }
