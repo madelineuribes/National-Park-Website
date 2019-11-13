@@ -12,10 +12,10 @@
 		<label for="parkCode">Park:</label>
 		<select name="parkCode">
 			<c:forEach var="park" items="${allParks}">
-				<option value="${park.parkCode}"><c:out value="${park.parkCode }" />
+				<option value="${park.parkCode}"><c:out value="${park.name }" />
 						  
-
-				</option>
+ 
+				</option>  
 			</c:forEach> 
  
 		</select>
@@ -23,7 +23,7 @@
 
 <br> 
 
- 
+   
 		<label for="email">Email:</label>
 		<form:input path="email" class="form-control" />
 		<form:errors path="email" cssClass="error" />
