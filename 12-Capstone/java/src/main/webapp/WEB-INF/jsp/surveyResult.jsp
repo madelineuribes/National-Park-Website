@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Your Survey Results!</title>
+<link rel="stylesheet" href="style.css"></link>
 </head>
 <body>
 
+
+
 </body>
-</html>
+</html> 
