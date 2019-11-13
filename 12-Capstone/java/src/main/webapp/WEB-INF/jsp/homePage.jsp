@@ -54,8 +54,8 @@
 	<div id="park-container">
 	<h2>National Parks</h2>
 		<c:forEach var="park" items="${allParks}">
-			<div class="col-md-12">
-				<div class="col-md-6 park-img">
+			<div class="col-md-12 individual-park">
+				<div class="col-md-4 park-img">
 					<c:url value="/parkDetail" var="parkDetail" />
 
 					<a class="park" href="${parkDetail}?parkCode=${park.parkCode}">
@@ -63,7 +63,7 @@
 					</a>
 				</div>
 
-				<div class="col-md-6">
+				<div class="col-md-8 park-info">
 					<h3>
 						<c:out value="${park.name}" />
 					</h3>
