@@ -39,7 +39,7 @@
 						<ul class="nav navbar-nav">
 							<li><c:url value="/survey" var="surveyHref" /><a
 								href="${surveyHref}">Survey</a></li>
-							<li><c:url value="/favoriteParks" var="favoriteParksHref" /><a
+							<li><c:url value="/surveyResult" var="favoriteParksHref" /><a
 								href="${favoriteParksHref}">Favorite Parks</a></li>
 						</ul>
 					</div>
