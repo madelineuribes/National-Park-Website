@@ -1,42 +1,21 @@
 package com.techelevator.npgeek.Model.Weather;
 
-import java.text.DecimalFormat;
-
 public class Weather {
 
 	private String parkCode;
-	private int highTemp;
-	private int lowTemp;
 	private int dayValue;
 	private String forecast;
-	private Double celsiusLow;
-	private Double celsiusHigh;
-	private Double fahrenheitHigh;
-	private Double fahrenheitLow;
-	
+	private int lowC;
+	private int highC;
+	private int highF;
+	private int lowF;
 
-	public String getParkCode() { 
-		return parkCode; 
+	public String getParkCode() {
+		return parkCode;
 	}
 
 	public void setParkCode(String parkCode) {
 		this.parkCode = parkCode;
-	}
-
-	public int getHighTemp() {
-		return highTemp;
-	}
-
-	public void setHighTemp(int highTemp) {
-		this.highTemp = highTemp; 
-	}
-
-	public int getLowTemp() {
-		return lowTemp;
-	}
-
-	public void setLowTemp(int lowTemp) {
-		this.lowTemp = lowTemp;
 	}
 
 	public int getDayValue() {
@@ -54,6 +33,7 @@ public class Weather {
 	public void setForecast(String forecast) {
 		this.forecast = forecast;
 	}
+<<<<<<< HEAD
 	
 //public Double getCelsiusLow() {
 //		
@@ -79,4 +59,41 @@ public class Weather {
 //	public void setCelsiusHigh(Double celsiusHigh) {
 //		this.celsiusHigh = celsiusHigh;
 //	}
+=======
+
+	public int getLowC() {
+		return lowC;
+	}
+
+	public void setLowC(int lowC) {
+		this.lowC = lowC;
+	}
+
+	public int getHighC() {
+		return highC;
+	}
+
+	public void setHighC(int highC) {
+		this.highC = highC;
+	}
+
+	public int getHighF() {
+		return highF;
+	}
+
+	public void setHighF(int highF) {
+		this.highF = highF;
+	}
+
+	public int getLowF() {
+		return lowF;
+	}
+
+	public void setLowF(int lowF) {
+		this.lowF = lowF;
+	}
+
+	
+
+>>>>>>> 1a34511fb40a98c16d8d318ca77b8f49808ce527
 }
