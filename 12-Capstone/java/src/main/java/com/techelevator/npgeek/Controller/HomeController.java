@@ -37,6 +37,7 @@ public class HomeController {
 		models.put("park", parkDao.getParkById(parkCode));
 		return "parkDetail"; 
 	}
+	
 //	@RequestMapping(path = "/ParkDetailList", method = RequestMethod.POST)
 //	public String changeTemp(@RequestParam Boolean tempScale, @RequestParam String oldParkCode, HttpSession session) {
 //		session.setAttribute("inCelcius", tempScale);
