@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 <c:set var="parkCode" value="${param.parkCode}" />
@@ -65,81 +66,98 @@
 			</p>
 		</div>
 
-		<div class="col-md-12 weather-container">
 
 
-			<c:forEach var="weather" items="${allWeather}">
-				<c:choose>
-					<c:when test="${weather.dayValue == 1}">
-						<div class="col-md-4 today-forecast">
 
-							<c:if test="${weather.forecast == 'snow'}">
-								<img src="img/weather/snow.png" />
-								<p>Pack snow shoes</p>
-							</c:if>
+	</div>
 
-							<c:if test="${weather.forecast == 'cloudy'}">
-								<img src="img/weather/cloudy.png" />
-
-							</c:if>
-
-							<c:if test="${weather.forecast == 'partly cloudy'}">
-								<img src="img/weather/partlyCloudy.png" />
-
-							</c:if>
-
-							<c:if test="${weather.forecast == 'rain'}">
-								<img src="img/weather/rain.png" />
-								<p>Pack rain gear and wear waterproof shoes</p>
-							</c:if>
-
-							<c:if test="${weather.forecast == 'thunderstorms'}">
-								<img src="img/weather/thunderstorms.png" />
-								<p>Seek shelter and avoid hiking on exposed rigids</p>
-							</c:if>
-
-							<c:if test="${weather.forecast == 'sunny'}">
-								<img src="img/weather/sunny.png" />
-								<p>Pack sunblock</p>
-							</c:if>
-
-							<c:out value="${weather.forecast}" />
-							<c:out value="${weather.lowTemp}"></c:out>
-							<c:out value="${weather.highTemp}"></c:out>
+	<div class="col-md-12 weather-container">
 
 
-						</div>
-					</c:when>
 
-					<c:otherwise>
-						<div class="col-md-8 four-forecast">
-							<c:if test="${weather.forecast == 'snow'}">
-								<img src="img/weather/snow.png" />
-							</c:if>
+		<c:forEach var="weather" items="${allWeather}">
+			<c:choose>
+				<c:when test="${weather.dayValue == 1}">
+					<div class="col-md-4 today-forecast">
 
-							<c:if test="${weather.forecast == 'cloudy'}">
-								<img src="img/weather/cloudy.png" />
-							</c:if>
+						<c:if test="${weather.forecast == 'snow'}">
+							<img src="img/weather/snow.png" />
+							<p>Pack snow shoes</p>
+						</c:if>
 
-							<c:if test="${weather.forecast == 'partly cloudy'}">
-								<img src="img/weather/partlyCloudy.png" />
-							</c:if>
+						<c:if test="${weather.forecast == 'cloudy'}">
+							<img src="img/weather/cloudy.png" />
 
-							<c:if test="${weather.forecast == 'rain'}">
-								<img src="img/weather/rain.png" />
-							</c:if>
+						</c:if>
 
-							<c:if test="${weather.forecast == 'thunderstorms'}">
-								<img src="img/weather/thunderstorms.png" />
-							</c:if>
+						<c:if test="${weather.forecast == 'partly cloudy'}">
+							<img src="img/weather/partlyCloudy.png" />
 
-							<c:out value="${weather.lowTemp}"></c:out>
-							<c:out value="${weather.highTemp}"></c:out>
-						</div>
-					</c:otherwise>
-				</c:choose>
-			</c:forEach>
-		</div>
+						</c:if>
+
+						<c:if test="${weather.forecast == 'rain'}">
+							<img src="img/weather/rain.png" />
+							<p>Pack rain gear and wear waterproof shoes</p>
+						</c:if>
+
+						<c:if test="${weather.forecast == 'thunderstorms'}">
+							<img src="img/weather/thunderstorms.png" />
+							<p>Seek shelter and avoid hiking on exposed ridges</p>
+						</c:if>
+
+						<c:if test="${weather.forecast == 'sunny'}">
+							<img src="img/weather/sunny.png" />
+							<p>Pack Sun block</p>
+						</c:if>
+
+						<c:out value="${weather.forecast}" />
+						<c:out value="${weather.lowTemp}"></c:out>
+						<c:out value="${weather.highTemp}"></c:out>
+						
+						
+
+
+					</div>
+				</c:when>
+
+				<c:otherwise>
+					<div class="col-md-8 four-forecast">
+						<c:if test="${weather.forecast == 'snow'}">
+							<img src="img/weather/snow.png" />
+						</c:if>
+
+						<c:if test="${weather.forecast == 'cloudy'}">
+							<img src="img/weather/cloudy.png" />
+						</c:if>
+
+						<c:if test="${weather.forecast == 'partly cloudy'}">
+							<img src="img/weather/partlyCloudy.png" />
+						</c:if>
+
+						<c:if test="${weather.forecast == 'rain'}">
+							<img src="img/weather/rain.png" />
+						</c:if>
+
+						<c:if test="${weather.forecast == 'thunderstorms'}">
+							<img src="img/weather/thunderstorms.png" />
+						</c:if>
+
+						<c:if test="${weather.forecast == 'sunny'}">
+							<img src="img/weather/sunny.png" />
+
+						</c:if>
+
+						   
+
+
+ 
+						<c:out value="${weather.lowTemp}"></c:out>
+						<c:out value="${weather.highTemp}"></c:out>
+					</div>
+				</c:otherwise>
+			</c:choose>
+		</c:forEach>
+	</div>
 	</div>
 </body>
 </html>
