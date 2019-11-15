@@ -16,7 +16,6 @@
 			<label for="parkCode">Park:</label>
 			<select class="form-control" name="parkCode">
 				<c:forEach var="park" items="${allParks}">
-					<option value=""></option>
 					<option value="${park.parkCode}"><c:out
 							value="${park.name }" />
 					</option>
@@ -32,7 +31,6 @@
 
 			<label for="state">State of Residence:</label>
 			<select class="form-control" name="state">
-				<option value=""></option>
 				<option value="Alabama">Alabama</option>
 				<option value="Alaska">Alaska</option>
 				<option value="Arizona">Arizona</option>
@@ -88,7 +86,6 @@
 
 			<label for="activityLevel">Daily Activity Level:</label>
 			<select class="form-control" name="activityLevel">
-				<option value=""></option>
 				<option value="inactive">Inactive</option>
 				<option value="sedentary">Sedentary</option>
 				<option value="active">Active</option>

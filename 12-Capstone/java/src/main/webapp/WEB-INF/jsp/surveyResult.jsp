@@ -13,6 +13,7 @@
 				<h4>
 					<c:out value="${park.name}" />
 				</h4>
+				
 				<p>
 					<c:out value="${park.state}" />
 				</p>

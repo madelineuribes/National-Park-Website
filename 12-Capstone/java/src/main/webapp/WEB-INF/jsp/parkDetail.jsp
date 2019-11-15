@@ -6,24 +6,34 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 <c:set var="parkCode" value="${param.parkCode}" />
 
-<body>
-	<div class="col-md-12 detail-container">
-		<div class="park-detail-img">
-			<img src="img/parks/${parkCode.toLowerCase()}.jpg" />
+<body class="detail-container">
+	<h1>
+		<c:out value="${park.name}" />
+	</h1>
+
+	<h5>
+		<c:out value="${park.inspQuote}" />
+	</h5>
+	<h6>
+		-
+		<c:out value="${park.inspQuoteSource}" />
+	</h6>
+	<div class="col-md-12">
+		<div class="col-md-6">
+			<img src="img/parks/${parkCode.toLowerCase()}.jpg"
+				class="img-thumbnail" />
 		</div>
 
-		<div class="park-detail-info">
-			<h3>
-				<c:out value="${park.name}" />
-			</h3>
+		<div class="park-detail-info col-md-6">
 			<p>
-				<c:out value="${park.inspQuote}" />
+				Entry Fee: $
+				<c:out value="${park.entryFee}" />
 			</p>
+
 			<p>
-				-
-				<c:out value="${park.inspQuoteSource}" />
+				Total Number of Camp Sites:
+				<c:out value="${park.numOfCampsites}" />
 			</p>
-			<br>
 			<p>
 				Acreage:
 				<c:out value="${park.acreage}" />
@@ -32,13 +42,10 @@
 				Elevation:
 				<c:out value="${park.elevation}" />
 			</p>
+
 			<p>
 				Total Miles on Trail:
 				<c:out value="${park.milesOfTrail}" />
-			</p>
-			<p>
-				Total Number of Camp Sites:
-				<c:out value="${park.numOfCampsites}" />
 			</p>
 			<p>
 				Climate:
@@ -56,18 +63,16 @@
 				Number of Animal Species:
 				<c:out value="${park.numOfAnimalSpecies}" />
 			</p>
-			<p>
-				Entry Fee:
-				<c:out value="${park.entryFee}" />
-			</p>
 			<br>
-			<p>
-				<c:out value="${park.parkDescription}" />
-			</p>
 		</div>
 	</div>
-	
+	<div class="park-desc col-md-12">
+		<p>
+			<c:out value="${park.parkDescription}" />
+		</p>
+	</div>
+
 	<c:import url="/WEB-INF/jsp/weather.jsp" />
-	
+
 </body>
 </html>

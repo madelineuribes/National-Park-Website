@@ -8,13 +8,16 @@
 	<c:param name="parkCode" value="${park.parkCode}" />
 </c:url>
 
-<form action="${parkDetailPost}" method="POST">
-	<input type="hidden" name="parkCode" value="${park.parkCode}">
-	<input type="submit" name="temp" value="Change to C"> 
-	<input type="submit" name="temp" value="Change to F">
-</form>
-
+<h2>5 Day Forecast</h2>
+<div class="col-md-4 col-md-offset-4">
+	<form action="${parkDetailPost}" method="POST">
+		<input type="hidden" name="parkCode" value="${park.parkCode}">
+		<input type="submit" name="temp" value="Change to C"> <input
+			type="submit" name="temp" value="Change to F">
+	</form>
+</div>
 <div class="col-md-12 weather-container">
+
 	<c:forEach var="weather" items="${allWeather}">
 		<c:choose>
 			<c:when test="${weather.dayValue == 1}">
@@ -66,7 +69,7 @@
 			</c:when>
 
 			<c:otherwise>
-				<div class="col-md-8 four-forecast">
+				<div class="col-md-2 four-forecast">
 					<c:if test="${weather.forecast == 'snow'}">
 						<img src="img/weather/snow.png" />
 					</c:if>

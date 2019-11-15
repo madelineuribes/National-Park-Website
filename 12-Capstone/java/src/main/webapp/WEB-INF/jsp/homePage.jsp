@@ -61,20 +61,19 @@
 
 					<a class="park" href="${parkDetail}?parkCode=${park.parkCode}">
 						<img src="img/parks/${park.parkCode.toLowerCase()}.jpg" />
-					</a>
 				</div>
 
 				<div class="col-md-8 park-info">
 					<h3>
 						<c:out value="${park.name}" />
 					</h3>
+					</a>
 					<h4>
 						<c:out value="${park.state}" />
 					</h4>
 					<p>
 						<c:out value="${park.parkDescription}" />
 					</p>
-					
 				</div>
 			</div>
 		</c:forEach>

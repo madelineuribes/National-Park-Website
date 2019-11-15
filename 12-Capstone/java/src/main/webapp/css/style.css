@@ -77,6 +77,10 @@ h3 {
 	font-size: 2rem;
 }
 
+a:hover {
+	text-decoration: none;
+}
+
 h4 {
 	text-transform: uppercase;
 	font-weight: 300;
@@ -107,7 +111,7 @@ h4 {
 
 #favorite-parks-page {
 	background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.87),
-		rgba(255, 255, 255, 0.87)), url(../img/Yos-NP.jpg);	
+		rgba(255, 255, 255, 0.87)), url(../img/Yos-NP.jpg);
 }
 
 #favorite-parks-page h1 {
@@ -125,13 +129,34 @@ h4 {
 		rgba(0, 0, 0, 0.19);
 }
 
+.detail-container h1 {
+	margin-bottom: 40px;
+	font-weight: 600;
+	text-align: center;
+	background: -webkit-linear-gradient(#7ed56f, #28b485);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+h5 {
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 200;
+	font-size: 1.8rem;
+}
+
+h6 {
+	font-style: italic;
+	text-align: center;
+	font-weight: 600;
+}
 
 .four-forecast img {
 	width: 100px;
 }
 
 .four-forecast {
-	display: inline;
+	display: inline-block;
 }
 
 .error {
