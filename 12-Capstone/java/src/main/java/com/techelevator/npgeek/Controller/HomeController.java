@@ -44,18 +44,18 @@ public class HomeController {
 		models.put("park", parkDao.getParkById(parkCode));
 		return "parkDetail"; 
 	}
-<<<<<<< HEAD
 
-=======
-	
 	@RequestMapping(path = "/parkDetail", method = RequestMethod.POST)
-	public String processSurveyInput(@RequestParam String parkCode, HttpSession session) {
-		
-		List<Weather> weather = weatherDao.getWeatherById(parkCode);
-		session.setAttribute("weather", weather); 
-
-		return "redirect:/parkDetail";
+	public String changeTemperatureFC(@RequestParam String tempFC, 
+			@RequestParam String parkCode,HttpSession session) {
+	    if (tempFC.equals("Celsius")) {
+	        Boolean celcius = true;
+	        session.setAttribute("celcius", celcius);
+	    } else {
+	        Boolean celcius = false;
+	        session.setAttribute("celcius", celcius);
+	    }
+	    return "redirect:/parkDetail?parkCode=" + parkCode;
 	}
->>>>>>> 1e4dab0f9e88856ae0ba4ba7f8ecf4396b1affa4
 
 }

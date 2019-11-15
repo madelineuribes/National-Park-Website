@@ -5,10 +5,8 @@ public class Weather {
 	private String parkCode;
 	private int dayValue;
 	private String forecast;
-	private int lowC;
-	private int highC;
-	private int highF;
-	private int lowF;
+	private double highF;
+	private double lowF;
 
 	public String getParkCode() {
 		return parkCode;
@@ -34,35 +32,19 @@ public class Weather {
 		this.forecast = forecast;
 	}
 
-	public int getLowC() {
-		return lowC;
-	}
-
-	public void setLowC(int lowC) {
-		this.lowC = lowC;
-	}
-
-	public int getHighC() {
-		return highC;
-	}
-
-	public void setHighC(int highC) {
-		this.highC = highC;
-	}
-
-	public int getHighF() {
+	public double getHighF() {
 		return highF;
 	}
 
-	public void setHighF(int highF) {
+	public void setHighF(double highF) {
 		this.highF = highF;
 	}
 
-	public int getLowF() {
+	public double getLowF() {
 		return lowF;
 	} 
 
-	public void setLowF(int lowF) {
+	public void setLowF(double lowF) {
 		this.lowF = lowF;
 	}
 
