@@ -6,13 +6,13 @@ public class Survey {
  
 	
 	private Long id;
-	private String parkCode;
-	
 	@NotBlank(message="*")
+	private String parkCode;
+	@NotBlank(message="Enter Email")
 	private String email;
 	@NotBlank(message="*")
 	private String state;
-	
+	@NotBlank(message="*")
 	private String activityLevel;
 	
 	public Long getId() {
