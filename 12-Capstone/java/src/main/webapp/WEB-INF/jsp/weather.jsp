@@ -8,6 +8,16 @@
 	<c:param name="parkCode" value="${park.parkCode}" />
 </c:url>
 
+<<<<<<< HEAD
+<form action="${parkDetailPost}" method="POST">
+	<input type="hidden" name="temp" value=false> 
+	<input type="submit" value="Change to C"> 
+	
+	<input type="hidden" name="temp" value=true>
+	<input type="submit" value="Change to F">
+</form>
+
+=======
 <h2>5 Day Forecast</h2>
 <div class="col-md-12">
 	<form action="${parkDetailPost}" method="POST">
@@ -16,6 +26,7 @@
 			type="submit" name="temp" value="Change to F">
 	</form>
 </div>
+>>>>>>> 1e4dab0f9e88856ae0ba4ba7f8ecf4396b1affa4
 <div class="col-md-12 weather-container">
 
 	<c:forEach var="weather" items="${allWeather}">

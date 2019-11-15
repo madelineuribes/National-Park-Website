@@ -60,12 +60,10 @@ public class Weather {
 
 	public int getLowF() {
 		return lowF;
-	}
+	} 
 
 	public void setLowF(int lowF) {
 		this.lowF = lowF;
 	}
-
-	
 
 }
