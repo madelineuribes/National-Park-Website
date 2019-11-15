@@ -45,10 +45,7 @@ public class HomeController {
 		return "parkDetail"; 
 	}
 
-<<<<<<< HEAD
-	
-=======
->>>>>>> 7d873a862c6587c970b456f16effae1f7833ce0e
+
 	@RequestMapping(path = "/parkDetail", method = RequestMethod.POST)
 	public String changeTemperatureFC(@RequestParam String tempFC, 
 			@RequestParam String parkCode,HttpSession session) {
@@ -61,9 +58,5 @@ public class HomeController {
 	    }
 	    return "redirect:/parkDetail?parkCode=" + parkCode;
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> 7d873a862c6587c970b456f16effae1f7833ce0e
 
 }
