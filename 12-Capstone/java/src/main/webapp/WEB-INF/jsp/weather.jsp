@@ -9,7 +9,7 @@
 </c:url>
 
 <h2>5 Day Forecast</h2>
-<div class="col-md-4 col-md-offset-4">
+<div class="col-md-12">
 	<form action="${parkDetailPost}" method="POST">
 		<input type="hidden" name="parkCode" value="${park.parkCode}">
 		<input type="submit" name="temp" value="Change to C"> <input
@@ -19,9 +19,12 @@
 <div class="col-md-12 weather-container">
 
 	<c:forEach var="weather" items="${allWeather}">
+
 		<c:choose>
+
 			<c:when test="${weather.dayValue == 1}">
 				<div class="col-md-4 today-forecast">
+				<c:out value="${weather.forecast}" />
 
 					<c:if test="${weather.forecast == 'snow'}">
 						<img src="img/weather/snow.png" />
@@ -53,8 +56,6 @@
 						<p>Pack Sun block.</p>
 					</c:if>
 
-					<c:out value="${weather.forecast}" />
-
 					<c:if test="${temp == 'Change to C'}">
 						<c:out value="${weather.lowC}"></c:out>
 						<c:out value="${weather.highC}"></c:out>
@@ -69,7 +70,8 @@
 						<p>Bring an extra gallon of water.</p>
 					</c:if>
 
-					<c:if test="${weather.highF - weather.lowF > 20 || weather.highC - weather.lowC > 20}">
+					<c:if
+						test="${weather.highF - weather.lowF > 20 || weather.highC - weather.lowC > 20}">
 						<p>Wear breathable layers.</p>
 					</c:if>
 
