@@ -178,8 +178,36 @@ h2 {
 	font-weight: 600;
 }
 
+.today-forecast{
+	border-radius: 3px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+		margin-right: 100px;	
+}
+.today-forecast img{
+	max-width: 70%;
+	
+}
+
+.today-forecast h3 {
+	text-align: center;
+}
+
+.four-forecast {
+	text-align: center;	
+	margin: 100px 5px 0 5px;
+	height: 200px;
+	border-radius: 3px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);	
+}
+
+.four-forecast h6 {
+	text-transform: uppercase !important;
+}
+
 .four-forecast img {
-	width: 100px;
+	width: 90px;
 }
 
 .four-forecast {

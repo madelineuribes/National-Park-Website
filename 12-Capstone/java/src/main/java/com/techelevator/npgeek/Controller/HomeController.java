@@ -45,15 +45,25 @@ public class HomeController {
 		return "parkDetail"; 
 	}
 
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 7d873a862c6587c970b456f16effae1f7833ce0e
 	@RequestMapping(path = "/parkDetail", method = RequestMethod.POST)
-	public String processSurveyInput(@RequestParam String parkCode, HttpSession session) {
-		
-		List<Weather> weather = weatherDao.getWeatherById(parkCode);
-		session.setAttribute("weather", weather); 
-
-		return "redirect:/parkDetail";
+	public String changeTemperatureFC(@RequestParam String tempFC, 
+			@RequestParam String parkCode,HttpSession session) {
+	    if (tempFC.equals("Celsius")) {
+	        Boolean celcius = true;
+	        session.setAttribute("celcius", celcius);
+	    } else {
+	        Boolean celcius = false;
+	        session.setAttribute("celcius", celcius);
+	    }
+	    return "redirect:/parkDetail?parkCode=" + parkCode;
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7d873a862c6587c970b456f16effae1f7833ce0e
 
 }
