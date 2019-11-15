@@ -3,15 +3,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<body>
-	<div id="favorite-parks-page">
-		<h2>Favorite Parks</h2>
+<body id="favorite-parks-page">
 
+	<h1>Favorite Parks</h1>
+
+	<div class="col-md-12 fav-park">
 		<c:forEach var="park" items="${favParks}">
-			<div class="col-md-12 fav-park">
+			<div class="col-md-4">
 				<h4>
 					<c:out value="${park.name}" />
 				</h4>
+				
 				<p>
 					<c:out value="${park.state}" />
 				</p>
@@ -22,5 +24,6 @@
 			</div>
 		</c:forEach>
 	</div>
+
 </body>
 </html>

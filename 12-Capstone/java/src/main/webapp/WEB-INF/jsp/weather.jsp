@@ -6,10 +6,9 @@
 
 <c:url var="parkDetailPost" value="/parkDetail">
 	<c:param name="parkCode" value="${park.parkCode}" />
-	<c:param name="fiveDayForecastValue"
-		value="${weather.fiveDayForecastValue}" />
 </c:url>
 
+<<<<<<< HEAD
 <form action="${parkDetailPost}" method="POST">
 	<input type="hidden" name="temp" value=false> 
 	<input type="submit" value="Change to C"> 
@@ -18,7 +17,18 @@
 	<input type="submit" value="Change to F">
 </form>
 
+=======
+<h2>5 Day Forecast</h2>
+<div class="col-md-4 col-md-offset-4">
+	<form action="${parkDetailPost}" method="POST">
+		<input type="hidden" name="parkCode" value="${park.parkCode}">
+		<input type="submit" name="temp" value="Change to C"> <input
+			type="submit" name="temp" value="Change to F">
+	</form>
+</div>
+>>>>>>> 1e4dab0f9e88856ae0ba4ba7f8ecf4396b1affa4
 <div class="col-md-12 weather-container">
+
 	<c:forEach var="weather" items="${allWeather}">
 		<c:choose>
 			<c:when test="${weather.dayValue == 1}">
@@ -26,7 +36,7 @@
 
 					<c:if test="${weather.forecast == 'snow'}">
 						<img src="img/weather/snow.png" />
-						<p>Pack snow shoes</p>
+						<p>Pack snow shoes.</p>
 					</c:if>
 
 					<c:if test="${weather.forecast == 'cloudy'}">
@@ -41,28 +51,49 @@
 
 					<c:if test="${weather.forecast == 'rain'}">
 						<img src="img/weather/rain.png" />
-						<p>Pack rain gear and wear waterproof shoes</p>
+						<p>Pack rain gear and wear waterproof shoes.</p>
 					</c:if>
 
 					<c:if test="${weather.forecast == 'thunderstorms'}">
 						<img src="img/weather/thunderstorms.png" />
-						<p>Seek shelter and avoid hiking on exposed ridges</p>
+						<p>Seek shelter and avoid hiking on exposed ridges.</p>
 					</c:if>
 
 					<c:if test="${weather.forecast == 'sunny'}">
 						<img src="img/weather/sunny.png" />
-						<p>Pack Sun block</p>
+						<p>Pack Sun block.</p>
 					</c:if>
 
 					<c:out value="${weather.forecast}" />
-					<c:out value="${weather.lowF}"></c:out>
-					<c:out value="${weather.highF}"></c:out>
+
+					<c:if test="${temp == 'Change to C'}">
+						<c:out value="${weather.lowC}"></c:out>
+						<c:out value="${weather.highC}"></c:out>
+					</c:if>
+
+					<c:if test="${temp == 'Change to F'}">
+						<c:out value="${weather.lowF}"></c:out>
+						<c:out value="${weather.highF}"></c:out>
+					</c:if>
+
+					<c:if test="${weather.highF > 75 || weather.highC > 23}">
+						<p>Bring an extra gallon of water.</p>
+					</c:if>
+
+					<c:if test="${weather.highF - weather.lowF > 20 || weather.highC - weather.lowC > 20}">
+						<p>Wear breathable layers.</p>
+					</c:if>
+
+					<c:if test="${weather.lowF < 20 || weather.lowC < -6}">
+						<p>Long exposure to frigid temperatures can be dangerous.</p>
+					</c:if>
+
 
 				</div>
 			</c:when>
 
 			<c:otherwise>
-				<div class="col-md-8 four-forecast">
+				<div class="col-md-2 four-forecast">
 					<c:if test="${weather.forecast == 'snow'}">
 						<img src="img/weather/snow.png" />
 					</c:if>
@@ -88,8 +119,15 @@
 
 					</c:if>
 
-					<c:out value="${weather.lowF}"></c:out>
-					<c:out value="${weather.highF}"></c:out>
+					<c:if test="${temp == 'Change to C'}">
+						<c:out value="${weather.lowC}"></c:out>
+						<c:out value="${weather.highC}"></c:out>
+					</c:if>
+
+					<c:if test="${temp == 'Change to F'}">
+						<c:out value="${weather.lowF}"></c:out>
+						<c:out value="${weather.highF}"></c:out>
+					</c:if>
 				</div>
 			</c:otherwise>
 		</c:choose>
