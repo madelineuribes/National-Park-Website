@@ -5,13 +5,14 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 <c:set var="parkCode" value="${param.parkCode}" />
-
+<c:url value="/parkDetail" var="parkDetail" />
 <body class="detail-container">
 	<div class="detail-head">
+		<a class="park" href="${parkDetail}?parkCode=${park.parkCode}">
 		<h1>
 			<c:out value="${park.name}" />
 		</h1>
-
+</a>
 		<h5>
 			<c:out value="${park.inspQuote}" />
 		</h5>
