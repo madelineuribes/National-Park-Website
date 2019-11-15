@@ -71,7 +71,7 @@ h1, h2, h3, h4 {
 	max-width: 100%;
 }
 
-.park-info h3 {
+h3 {
 	text-transform: uppercase;
 	font-weight: 600;
 	font-size: 2rem;
@@ -88,26 +88,43 @@ h4 {
 }
 
 #survey {
-	padding: 20px; background-color : white;
-	border-radius: 2px;
+	padding: 20px;
+	background-color: white;
+	border-radius: 3px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
 		rgba(0, 0, 0, 0.19);
 	background-color: white;
 }
 
-.btn-primary{
+.label {
+	color: rgb(105, 105, 105);
+}
+
+.btn-primary {
 	background-color: #28b485;
 	border: #28b485;
 }
 
-#favorite-parks-page h2 {
-	margin-left: 20px;
+#favorite-parks-page {
+	background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.87),
+		rgba(255, 255, 255, 0.87)), url(../img/Yos-NP.jpg);	
+}
+
+#favorite-parks-page h1 {
+	margin-bottom: 40px;
+	font-weight: 600;
+	text-align: center;
+	background: -webkit-linear-gradient(#7ed56f, #28b485);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .fav-park {
+	background-color: rgba(255, 255, 255, .5);
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
 		rgba(0, 0, 0, 0.19);
 }
+
 
 .four-forecast img {
 	width: 100px;
