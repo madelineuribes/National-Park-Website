@@ -13,6 +13,7 @@
 <form action="${parkDetailPost}" method="POST">
 	<input type="hidden" name="temp" value=false> 
 	<input type="submit" value="Change to C"> 
+	
 	<input type="hidden" name="temp" value=true>
 	<input type="submit" value="Change to F">
 </form>
