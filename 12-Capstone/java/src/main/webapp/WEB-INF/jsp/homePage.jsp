@@ -7,20 +7,20 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>National Park Weather Service</title>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 <c:url value="/css/style.css" var="cssHref" />
 <link rel="stylesheet" href="${cssHref}">
-<link
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">	
 </head>
 <body>
 
 	<header>
-		<div class="header">
+			<h1>Outdoors</h1>
+			<h2>is where life happens</h2>
+			
 			<c:url value="/" var="homePageHref" />
 			<c:url value="/img/logo.png" var="logoSrc" />
-
 
 			<div class="navbar navbar-default navbar-fixed-top">
 				<div class="container">
@@ -45,12 +45,13 @@
 					</div>
 				</div>
 			</div>
-		</div>
+			
+
 	</header>
 
 
 	<div id="park-container">
-	<h2>National Parks</h2>
+	<h1>National Parks</h1>
 		<c:forEach var="park" items="${allParks}">
 			<div class="col-md-12 individual-park">
 				<div class="col-md-4 park-img">

@@ -1,54 +1,93 @@
 body {
-	font-family: 'Open Sans', sans-serif;
-	background-color: white;
+	font-family: 'Lato', sans-serif;
 }
 
-h2 {
-
+h1, h2, h3, h4 {
+	color: rgb(105,105,105);
 }
 
-.header {
+header {
 	height: 80vh;
 	background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.2),
-		rgba(40, 180, 133, 0.2)), url(../img/hero.jpg);
+		rgba(40, 180, 133, 0.7)), url(../img/hero.jpg);
 	background-size: cover;
 	background-position: top;
 	position: relative;
-	margin-bottomg: 25px;
+}
+
+header h1 {
+	text-transform: uppercase;
+	letter-spacing: 6px;
+	color: white;
+	padding-top: 180px;
+	text-align: center;
+	font-weight: 400;
+	font-size: 5rem;
+}
+
+header h2 {
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	color: white;
+	text-align: center;
+	font-weight: 100;
+	font-size: 2rem;
 }
 
 .navbar-default {
-	background-color: rgba(255, 255, 255, .9) !important;
+	background-color: rgba(255, 255, 255, .95);
+	text-transform: uppercase;
+	font-weight: 100;
+	letter-spacing: 1px;
 }
 
 #park-container {
-	margin-top:20px;
+	margin-top: 50px;
 }
 
-#park-container h2 {
-	margin-left: 3%;
-	margin-bottom: 20px;
+#park-container h1 {
+	margin-bottom: 40px;
+	font-weight: 600;
+	text-align: center;
+	 background: -webkit-linear-gradient(#7ed56f, #28b485);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .individual-park {
-	box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-bottom: 2px solid #28b485;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
 }
+
 .park-img img {
-  	padding-top: 1%;
-  	padding-bottom: 1%;
+	padding-top: 1%;
+	padding-bottom: 1%;
 	max-width: 100%;
+}
+
+.park-info h3{
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 2rem;
+}
+
+h4 {
+	text-transform: uppercase;
+	font-weight: 300;
 }
 
 .col-md-12 {
 	margin-bottom: 10px;
 }
 
-#favorite-parks-page h2{
-	margin-left:20px;
+#favorite-parks-page h2 {
+	margin-left: 20px;
 }
 
 .fav-park {
-	box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
 }
 
 .four-forecast img {
@@ -58,4 +97,3 @@ h2 {
 .four-forecast {
 	display: inline;
 }
-

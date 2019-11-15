@@ -6,52 +6,50 @@
 
 <body>
 	<c:url value="/survey" var="surveyResultUrl" />
-	<form:form modelAttribute="survey" action="${surveyResultUrl}"
-		method="POST">
+	<div class="col-sm-6 offset-sm-3 text-center">
+		<form:form modelAttribute="survey" action="${surveyResultUrl}"
+			method="POST">
 
-		<label for="parkCode">Please Vote On Your Favorite Park:</label>
-		<select name="parkCode">
-			<c:forEach var="park" items="${allParks}">
-				<option value="${park.parkCode}"><c:out
-						value="${park.name }" />
-
-
-				</option>
-			</c:forEach>
-
-		</select>
+			<label for="parkCode">Please Vote On Your Favorite Park:</label>
+			<select name="parkCode">
+				<c:forEach var="park" items="${allParks}">
+					<option value="${park.parkCode}"><c:out
+							value="${park.name }" />
 
 
-		<br>
-		<br>
+					</option>
+				</c:forEach>
 
-		<label for="email">Your Email:</label>
-		<form:input path="email" class="form-control" />
-		<form:errors path="email" cssClass="error" />
-		<br>
-		<br>
-		<label for="state">Your State:</label>
-		<form:input path="state" class="form-control" />
-		<form:errors path="state" cssClass="error" />
-		<br>
-		<br>  
-
-		<label for="activityLevel">Your Daily Activity Level:</label>
-		<select name="activityLevel">
-			<option value="inactive">Inactive</option>
-			<option value="sedentary">Sedentary</option>
-			<option value="active">Active</option>
-			<option value="extremelyActive">Extremely Active</option>
+			</select>
 
 
+			<br>
+			<br>
 
-		</select>
+			<label for="email">Your Email:</label>
+			<form:input path="email" class="form-control" />
+			<form:errors path="email" cssClass="error" />
+			<br>
+			<br>
+			<label for="state">Your State:</label>
+			<form:input path="state" class="form-control" />
+			<form:errors path="state" cssClass="error" />
+			<br>
+			<br>
 
-		<br>
-		<br>
-		<input type="submit" value="Submit" />
+			<label for="activityLevel">Your Daily Activity Level:</label>
+			<select name="activityLevel">
+				<option value="inactive">Inactive</option>
+				<option value="sedentary">Sedentary</option>
+				<option value="active">Active</option>
+				<option value="extremelyActive">Extremely Active</option>
+			</select>
 
-	</form:form>
+			<br>
+			<br>
+			<input type="submit" value="Submit" />
 
+		</form:form>
+	</div>
 </body>
 </html>

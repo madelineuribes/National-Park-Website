@@ -6,15 +6,12 @@
 
 <c:url var="parkDetailPost" value="/parkDetail">
 	<c:param name="parkCode" value="${park.parkCode}" />
-	<c:param name="fiveDayForecastValue"
-		value="${weather.fiveDayForecastValue}" />
 </c:url>
 
 <form action="${parkDetailPost}" method="POST">
-	<input type="hidden" name="temp" value=false> 
-	<input type="submit" value="Change to C"> 
-	<input type="hidden" name="temp" value=true>
-	<input type="submit" value="Change to F">
+	<input type="hidden" name="parkCode" value="${park.parkCode}">
+	<input type="submit" name="temp" value="Change to C"> 
+	<input type="submit" name="temp" value="Change to F">
 </form>
 
 <div class="col-md-12 weather-container">
@@ -54,8 +51,16 @@
 					</c:if>
 
 					<c:out value="${weather.forecast}" />
-					<c:out value="${weather.lowF}"></c:out>
-					<c:out value="${weather.highF}"></c:out>
+
+					<c:if test="${temp == 'Change to C'}">
+						<c:out value="${weather.lowC}"></c:out>
+						<c:out value="${weather.highC}"></c:out>
+					</c:if>
+
+					<c:if test="${temp == 'Change to F'}">
+						<c:out value="${weather.lowF}"></c:out>
+						<c:out value="${weather.highF}"></c:out>
+					</c:if>
 
 				</div>
 			</c:when>
@@ -87,8 +92,15 @@
 
 					</c:if>
 
-					<c:out value="${weather.lowF}"></c:out>
-					<c:out value="${weather.highF}"></c:out>
+					<c:if test="${temp == 'Change to C'}">
+						<c:out value="${weather.lowC}"></c:out>
+						<c:out value="${weather.highC}"></c:out>
+					</c:if>
+
+					<c:if test="${temp == 'Change to F'}">
+						<c:out value="${weather.lowF}"></c:out>
+						<c:out value="${weather.highF}"></c:out>
+					</c:if>
 				</div>
 			</c:otherwise>
 		</c:choose>
