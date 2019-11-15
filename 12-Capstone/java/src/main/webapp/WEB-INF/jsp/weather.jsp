@@ -25,7 +25,7 @@
 
 					<c:if test="${weather.forecast == 'snow'}">
 						<img src="img/weather/snow.png" />
-						<p>Pack snow shoes</p>
+						<p>Pack snow shoes.</p>
 					</c:if>
 
 					<c:if test="${weather.forecast == 'cloudy'}">
@@ -40,17 +40,17 @@
 
 					<c:if test="${weather.forecast == 'rain'}">
 						<img src="img/weather/rain.png" />
-						<p>Pack rain gear and wear waterproof shoes</p>
+						<p>Pack rain gear and wear waterproof shoes.</p>
 					</c:if>
 
 					<c:if test="${weather.forecast == 'thunderstorms'}">
 						<img src="img/weather/thunderstorms.png" />
-						<p>Seek shelter and avoid hiking on exposed ridges</p>
+						<p>Seek shelter and avoid hiking on exposed ridges.</p>
 					</c:if>
 
 					<c:if test="${weather.forecast == 'sunny'}">
 						<img src="img/weather/sunny.png" />
-						<p>Pack Sun block</p>
+						<p>Pack Sun block.</p>
 					</c:if>
 
 					<c:out value="${weather.forecast}" />
@@ -64,6 +64,19 @@
 						<c:out value="${weather.lowF}"></c:out>
 						<c:out value="${weather.highF}"></c:out>
 					</c:if>
+
+					<c:if test="${weather.highF > 75 || weather.highC > 23}">
+						<p>Bring an extra gallon of water.</p>
+					</c:if>
+
+					<c:if test="${weather.highF - weather.lowF > 20 || weather.highC - weather.lowC > 20}">
+						<p>Wear breathable layers.</p>
+					</c:if>
+
+					<c:if test="${weather.lowF < 20 || weather.lowC < -6}">
+						<p>Long exposure to frigid temperatures can be dangerous.</p>
+					</c:if>
+
 
 				</div>
 			</c:when>

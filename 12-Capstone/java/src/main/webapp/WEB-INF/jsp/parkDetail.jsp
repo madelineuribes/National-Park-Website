@@ -7,18 +7,20 @@
 <c:set var="parkCode" value="${param.parkCode}" />
 
 <body class="detail-container">
-	<h1>
-		<c:out value="${park.name}" />
-	</h1>
+	<div class="detail-head">
+		<h1>
+			<c:out value="${park.name}" />
+		</h1>
 
-	<h5>
-		<c:out value="${park.inspQuote}" />
-	</h5>
-	<h6>
-		-
-		<c:out value="${park.inspQuoteSource}" />
-	</h6>
-	<div class="col-md-12">
+		<h5>
+			<c:out value="${park.inspQuote}" />
+		</h5>
+		<h6>
+			-
+			<c:out value="${park.inspQuoteSource}" />
+		</h6>
+	</div>
+	<div class="col-md-12 park-info-img">
 		<div class="col-md-6">
 			<img src="img/parks/${parkCode.toLowerCase()}.jpg"
 				class="img-thumbnail" />

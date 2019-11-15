@@ -112,6 +112,9 @@ h4 {
 #favorite-parks-page {
 	background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.87),
 		rgba(255, 255, 255, 0.87)), url(../img/Yos-NP.jpg);
+	background-size: cover;
+	background-position: top;
+	position: relative;
 }
 
 #favorite-parks-page h1 {
@@ -129,13 +132,31 @@ h4 {
 		rgba(0, 0, 0, 0.19);
 }
 
+.park-info-img {
+	margin-top: 30px;
+}
+
+.detail-head {
+	margin-bottom: 30px;
+}
+
 .detail-container h1 {
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 	font-weight: 600;
 	text-align: center;
 	background: -webkit-linear-gradient(#7ed56f, #28b485);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+}
+
+.park-info-img .park-detail.info {
+	border-radius: 3px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.park-desc {
+	margin: 20px 20px 50px 20px;
 }
 
 h5 {
@@ -147,6 +168,12 @@ h5 {
 
 h6 {
 	font-style: italic;
+	text-align: center;
+	font-weight: 600;
+}
+
+h2 {
+	text-transform: uppercase;
 	text-align: center;
 	font-weight: 600;
 }
