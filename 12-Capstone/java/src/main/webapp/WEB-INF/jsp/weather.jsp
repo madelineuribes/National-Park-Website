@@ -89,14 +89,14 @@
 
 					<c:choose>
 						<c:when test="${celcius}">
-							<p>
+							<p class="high-temp-today">
 								High:
 								<fmt:formatNumber maxFractionDigits="0">
 									<c:out value="${(weather.highF - 32) * 5 / 9}" />
 								</fmt:formatNumber>
 								°C
 							</p>
-							<p>
+							<p class="low-temp-today">
 								Low:
 								<fmt:formatNumber maxFractionDigits="0">
 									<c:out value="${(weather.lowF - 32) * 5 / 9}" />
@@ -122,7 +122,7 @@
 			</c:when>
 
 			<c:otherwise>
-				<div class="col-md-1.5 four-forecast ">
+				<div class="col-md-3 four-forecast ">
 					<h6>
 						<c:out value="${weather.forecast}" />
 					</h6>

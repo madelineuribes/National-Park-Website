@@ -178,28 +178,40 @@ h2 {
 	font-weight: 600;
 }
 
-.today-forecast{
+.weather-container {
+	margin-bottom: 20px;
+}
+
+.today-forecast {
 	border-radius: 3px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
 		rgba(0, 0, 0, 0.19);
-		margin-right: 100px;	
+	margin-right: 100px;
 }
-.today-forecast img{
-	max-width: 70%;
-	
+
+.today-forecast img {
+	max-width: 50%;
+	margin-left: auto; margin-right : auto;
+	display: block;
 }
 
 .today-forecast h3 {
 	text-align: center;
 }
 
+.high-temp-today {
+	font-weight: 500;
+	color: rgba(105, 105, 105, .9);	
+	
+}
+
 .four-forecast {
-	text-align: center;	
-	margin: 100px 5px 0 5px;
-	height: 200px;
+	text-align: center;
+	margin: 0 5px 5px 5px;
+	height: 190px;
 	border-radius: 3px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
-		rgba(0, 0, 0, 0.19);	
+		rgba(0, 0, 0, 0.19);
 }
 
 .four-forecast h6 {
