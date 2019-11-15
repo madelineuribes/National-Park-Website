@@ -44,9 +44,7 @@ public class HomeController {
 		models.put("park", parkDao.getParkById(parkCode));
 		return "parkDetail"; 
 	}
-<<<<<<< HEAD
 
-=======
 	
 	@RequestMapping(path = "/parkDetail", method = RequestMethod.POST)
 	public String processSurveyInput(@RequestParam String parkCode, HttpSession session) {
@@ -56,6 +54,6 @@ public class HomeController {
 
 		return "redirect:/parkDetail";
 	}
->>>>>>> 1e4dab0f9e88856ae0ba4ba7f8ecf4396b1affa4
+
 
 }
