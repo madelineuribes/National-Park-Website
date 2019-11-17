@@ -3,6 +3,8 @@ package com.techelevator.npgeek.Model.Survey;
 import static org.junit.Assert.*;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -14,6 +16,7 @@ import org.junit.Test;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 
 import com.techelevator.npgeek.Model.Survey.Survey;
+import com.techelevator.npgeek.Model.Park.Park;
 import com.techelevator.npgeek.Model.Survey.JdbcSurveyDao;
 
 public class JdbcSurveyDaoTest {
@@ -50,8 +53,34 @@ public class JdbcSurveyDaoTest {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void saveNewSurveyReturnsOneSurveyCount() {
+		Survey testSurvey = new Survey();
+		testSurvey.setParkCode("MRNP");
+		testSurvey.setEmail("email");
+		testSurvey.setState("ohio");
+		testSurvey.setActivityLevel("busy");
+		
+		dao.save(testSurvey);
+		
+		List<Park> parkList = new ArrayList<>();
+		parkList = dao.getNumOfSurveysTaken();
+		
+		Park newSurvey = parkList.get(parkList.size() - 1);
+		
+		assertEquals(1, newSurvey.getSurveyCount());		
+	}
+	
+	@Test
+	public void getTotalCountOfParksThatHaveSurveys() {		
+		List<Park> parkList = dao.getNumOfSurveysTaken();
+		assertEquals(7, parkList.size());		
+	}
+	
+	@Test
+	public void getNumOfSurveyCountForCVNP() {		
+		List<Park> parkList = dao.getNumOfSurveysTaken();
+		Park park = parkList.get(0);
+		assertEquals(6, park.getSurveyCount());		
 	}
 
 }

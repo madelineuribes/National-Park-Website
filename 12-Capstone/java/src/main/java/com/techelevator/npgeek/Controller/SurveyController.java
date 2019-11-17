@@ -59,9 +59,6 @@ public class SurveyController {
 		List<Park> favPark = surveyDao.getNumOfSurveysTaken();
 		map.addAttribute("favParks", favPark);
 		
-		Survey survey = surveyDao.getSurvey();
-		map.addAttribute("survey", survey);
-
 		return "surveyResult";
 	}
 }

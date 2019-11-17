@@ -8,8 +8,6 @@ public interface SurveyDao {
 
 	void save(Survey survey);
 
-	Survey getSurvey();
-
 	List<Park> getNumOfSurveysTaken();
 
 }
