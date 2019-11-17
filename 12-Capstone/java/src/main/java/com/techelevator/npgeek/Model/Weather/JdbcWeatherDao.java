@@ -26,18 +26,14 @@ public class JdbcWeatherDao implements WeatherDao {
 		String sqlSelectParkById = "SELECT * FROM weather WHERE parkcode = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectParkById, parkCode);
 		while (results.next()) {
-			weatherList.add(mapRowToWeather(results));
+			Weather weather = new Weather();
+			weather.setDayValue(results.getInt("fivedayforecastvalue"));
+			weather.setForecast(results.getString("forecast"));
+			weather.setLowF(results.getDouble("low"));
+			weather.setHighF(results.getDouble("high"));
+			weather.setParkCode(results.getString("parkcode"));
+			weatherList.add(weather);
 		}
 		return weatherList;
-	}
-
-	private Weather mapRowToWeather(SqlRowSet results) {
-		Weather weather = new Weather();
-		weather.setDayValue(results.getInt("fivedayforecastvalue"));
-		weather.setForecast(results.getString("forecast"));
-		weather.setLowF(results.getDouble("low"));
-		weather.setHighF(results.getDouble("high"));
-		weather.setParkCode(results.getString("parkcode"));
-		return weather;
 	}
 }
